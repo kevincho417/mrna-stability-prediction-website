@@ -1,0 +1,17 @@
+{
+  "token_to_id": {
+    "A": 1,
+    "U": 2,
+    "C": 3,
+    "G": 4
+  },
+  "pad_id": 0,
+  "unk_id": 5,
+  "segment_id": {
+    "5UTRseq": 1,
+    "CDSseq": 2,
+    "3UTRseq": 3
+  },
+  "max_len": 8192,
+  "truncation": "If a sequence is longer than max_len, each region is allocated proportional length and cropped by preserving both ends."
+}

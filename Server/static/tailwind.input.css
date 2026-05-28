@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+@source "../templates/**/*.html";
+@source "../**/*.py";
+
+@theme {
+  --font-sans: Arial, Helvetica, sans-serif;
+}

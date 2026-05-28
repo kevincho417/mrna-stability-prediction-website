@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "build:css": "tailwindcss -i ./Server/static/tailwind.input.css -o ./Server/static/styles.css",
+    "watch:css": "tailwindcss -i ./Server/static/tailwind.input.css -o ./Server/static/styles.css --watch"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.0",
+    "tailwindcss": "^4.3.0"
+  }
+}

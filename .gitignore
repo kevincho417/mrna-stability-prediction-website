@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.pytest_cache/
+
+# Node / Tailwind
+node_modules/
+npm-debug.log*
+
+# Runtime logs and generated app folders
+Dataset/
+Server/logs/
+Server/CodeIgniterApp/
+.playwright-mcp/
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Extra experiment outputs not needed for the final shared repo
+Training/transformer_outputs/
+Training/transformer_kmer3_outputs_8192/
+Training/ensemble_outputs_base8192_tuned/
+Training/ensemble_outputs_kmer3_8192/
+Training/ensemble_outputs_kmer3_8192_tuned/
+
+# Local temporary files
+*.tmp
+*.bak

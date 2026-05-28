@@ -1,0 +1,55 @@
+{
+  "model": "MLP over per-region RNA composition, motif, and k-mer frequency features",
+  "architecture": {
+    "hidden_dims": [
+      384,
+      128,
+      32
+    ],
+    "dropout": [
+      0.3,
+      0.2,
+      0.1
+    ],
+    "activation": "ReLU",
+    "normalization": "BatchNorm1d after each hidden Linear layer",
+    "loss": "BCEWithLogitsLoss with fold-specific positive class weight",
+    "optimizer": "AdamW"
+  },
+  "hyperparameters": {
+    "max_k": 4,
+    "hidden_dims": [
+      384,
+      128,
+      32
+    ],
+    "dropout": [
+      0.3,
+      0.2,
+      0.1
+    ],
+    "batch_size": 64,
+    "epochs": 200,
+    "patience": 25,
+    "learning_rate": 0.0008,
+    "weight_decay": 0.0003,
+    "seed": 42,
+    "threshold": 0.5
+  },
+  "cv_mean": {
+    "recall": 0.7119578516028146,
+    "precision": 0.7144433488395681,
+    "specificity": 0.7341911588785134,
+    "f1": 0.712242252051823,
+    "auROC": 0.793639414137277,
+    "auPRC": 0.7803584178571688
+  },
+  "cv_std": {
+    "recall": 0.03740111325250129,
+    "precision": 0.02874566942411951,
+    "specificity": 0.033604057967582084,
+    "f1": 0.020571958378734132,
+    "auROC": 0.01845597458527215,
+    "auPRC": 0.017391870908038082
+  }
+}
