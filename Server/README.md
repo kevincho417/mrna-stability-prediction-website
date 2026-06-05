@@ -21,7 +21,9 @@ In Ubuntu VM:
 The VM mode uses:
 
 - Apache2 + CodeIgniter 4 / PHP for the web/backend server on port `17888`
+- CodeIgniter MVC Model for socket inference calls and SQL history storage
 - Python TCP socket inference server as a systemd service on port `16888`
+- SQLite history database at `Server/CodeIgniterApp/writable/prediction_history.sqlite`
 - URL: `http://localhost:17888/2026Project/`
 
 ## Local Flask Mode
@@ -59,6 +61,15 @@ Labels:
 
 - `0`: highly degraded mRNA
 - `1`: lowly degraded / stable mRNA
+
+## MVC History Storage
+
+In VM mode, `app/Models/PredictionModel.php` owns the server-side inference workflow:
+
+- sends JSON prediction requests to the Python socket server
+- validates the socket response
+- saves recent prediction summaries into SQLite
+- provides recent history rows for the home page
 
 ## CSS
 

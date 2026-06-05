@@ -8,6 +8,7 @@ This is the formal server workflow for `Project.pdf`.
 - Apache HTTP port: `17888`
 - URL: `http://localhost:17888/2026Project/`
 - Deep learning socket service: Python TCP server on `127.0.0.1:16888`
+- SQL history storage: SQLite database under CodeIgniter `writable/`
 
 ## Architecture
 
@@ -15,9 +16,12 @@ This is the formal server workflow for `Project.pdf`.
 Browser
   -> Apache2 :17888
   -> CodeIgniter 4 Controller /2026Project/
-  -> PHP fsockopen("127.0.0.1", 16888)
+  -> CodeIgniter Model
+       -> SQLite prediction history
+       -> PHP fsockopen("127.0.0.1", 16888)
   -> Python PyTorch inference socket server
   -> JSON prediction
+  -> Model saves history
   -> CodeIgniter renders result page
 ```
 
@@ -54,12 +58,13 @@ This installs:
 
 - Apache2
 - PHP and required PHP extensions
+- SQLite3 and PHP SQLite extension
 - Composer
 - Python virtual environment
 - Python ML dependencies
 - CodeIgniter 4 appstarter under `Server/CodeIgniterApp`
 
-It also copies the project Controller, Views, Routes, and Tailwind CSS into the CodeIgniter app.
+It also copies the project Controller, Model, Views, Routes, and Tailwind CSS into the CodeIgniter app.
 
 ## 3. Configure Apache On Port 17888
 
@@ -138,6 +143,21 @@ curl http://localhost:17888/2026Project/api/health
 curl -X POST http://localhost:17888/2026Project/api/predict \
   -H 'Content-Type: application/json' \
   -d '{"transcript_id":"demo","CDSseq":"AUGGCCAAGUAA","5UTRseq":"AUG","3UTRseq":"UUUU","threshold":0.5}'
+```
+
+## SQL History
+
+Prediction history is stored by the CodeIgniter Model in:
+
+```text
+Server/CodeIgniterApp/writable/prediction_history.sqlite
+```
+
+Inspect it in the VM:
+
+```bash
+sqlite3 Server/CodeIgniterApp/writable/prediction_history.sqlite \
+  "SELECT created_at, transcript_id, predicted_label, predicted_probability, total_length FROM prediction_history ORDER BY id DESC LIMIT 10;"
 ```
 
 ## Troubleshooting

@@ -12,6 +12,7 @@ sudo apt-get install -y \
   apache2 \
   curl \
   libapache2-mod-php \
+  sqlite3 \
   unzip \
   python3 \
   python3-pip \
@@ -21,6 +22,7 @@ sudo apt-get install -y \
   php-curl \
   php-intl \
   php-mbstring \
+  php-sqlite3 \
   php-xml \
   php-zip \
   composer
@@ -46,11 +48,13 @@ fi
 echo "[4/6] Applying project MVC files"
 mkdir -p \
   "${CODEIGNITER_DIR}/app/Controllers" \
+  "${CODEIGNITER_DIR}/app/Models" \
   "${CODEIGNITER_DIR}/app/Views/layout" \
   "${CODEIGNITER_DIR}/app/Views/project" \
   "${CODEIGNITER_DIR}/public/assets"
 
 cp "${OVERLAY_DIR}/app/Controllers/Project.php" "${CODEIGNITER_DIR}/app/Controllers/Project.php"
+cp "${OVERLAY_DIR}/app/Models/PredictionModel.php" "${CODEIGNITER_DIR}/app/Models/PredictionModel.php"
 cp "${OVERLAY_DIR}/app/Views/layout/header.php" "${CODEIGNITER_DIR}/app/Views/layout/header.php"
 cp "${OVERLAY_DIR}/app/Views/layout/footer.php" "${CODEIGNITER_DIR}/app/Views/layout/footer.php"
 cp "${OVERLAY_DIR}/app/Views/project/index.php" "${CODEIGNITER_DIR}/app/Views/project/index.php"

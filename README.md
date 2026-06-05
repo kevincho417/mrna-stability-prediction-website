@@ -57,7 +57,7 @@ Training/
 Server/
   inference.py                      model loading and prediction wrapper
   prediction_socket_server.py       Python TCP socket inference server
-  codeigniter_overlay/              CodeIgniter MVC files for VM deployment
+  codeigniter_overlay/              CodeIgniter Controller, Model, Views for VM deployment
   templates/ static/                local Flask demo UI
 VM/
   setup_ubuntu.sh                   Ubuntu dependency setup
@@ -146,6 +146,7 @@ The formal project server follows `Project.pdf`:
 - Ubuntu 22.04 VM
 - Apache2 on port `17888`
 - CodeIgniter 4 / PHP backend
+- CodeIgniter Model with SQLite prediction history
 - Python prediction socket on `127.0.0.1:16888`
 - URL: `http://localhost:17888/2026Project/`
 

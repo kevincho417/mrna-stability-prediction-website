@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 @source "../templates/**/*.html";
+@source "../codeigniter_overlay/**/*.php";
 @source "../**/*.py";
 
 @theme {

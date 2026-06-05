@@ -4,6 +4,7 @@
         <span>HTTP port 17888</span>
         <span>Socket port 16888</span>
         <span>Framework: CodeIgniter 4 + PHP</span>
+        <span>SQL: SQLite history</span>
         <span>Model: MLP + ConvTransformer ensemble</span>
     </footer>
 </body>
