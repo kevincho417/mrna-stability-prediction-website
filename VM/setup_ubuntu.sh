@@ -28,12 +28,15 @@ sudo apt-get install -y \
 echo "[2/6] Creating Python virtual environment"
 python3 -m venv "${PROJECT_ROOT}/.venv"
 "${PROJECT_ROOT}/.venv/bin/python" -m pip install --upgrade pip
-"${PROJECT_ROOT}/.venv/bin/python" -m pip install \
+"${PROJECT_ROOT}/.venv/bin/python" -m pip install --no-cache-dir \
+  flask \
+  matplotlib \
   numpy \
   pandas \
-  scikit-learn \
-  torch \
-  matplotlib
+  scikit-learn
+"${PROJECT_ROOT}/.venv/bin/python" -m pip install --no-cache-dir \
+  --index-url https://download.pytorch.org/whl/cpu \
+  torch
 
 echo "[3/6] Creating CodeIgniter 4 app"
 if [ ! -d "${CODEIGNITER_DIR}" ]; then
