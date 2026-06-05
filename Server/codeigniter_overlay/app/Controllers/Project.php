@@ -10,13 +10,10 @@ class Project extends Controller
 {
     public function index(): string
     {
-        $model = new PredictionModel();
-
-        return $this->renderProjectPage([
+        return $this->renderProjectPage('project/index', [
             'result' => null,
             'error' => null,
             'old' => [],
-            'history' => $model->getRecentHistory(),
         ]);
     }
 
@@ -47,11 +44,40 @@ class Project extends Controller
             $error = $exception->getMessage();
         }
 
-        return $this->renderProjectPage([
+        return $this->renderProjectPage('project/index', [
             'result' => $result,
             'error' => $error,
             'old' => $old,
-            'history' => $model->getRecentHistory(),
+        ]);
+    }
+
+    public function history(): string
+    {
+        $model = new PredictionModel();
+
+        return $this->renderProjectPage('project/history', [
+            'history' => $model->getRecentHistory(50),
+        ]);
+    }
+
+    public function healthPage(): string
+    {
+        $health = null;
+        $healthRows = [];
+        $error = null;
+
+        try {
+            $model = new PredictionModel();
+            $health = $model->health();
+            $healthRows = $this->flattenTableRows($health);
+        } catch (\Throwable $exception) {
+            $error = $exception->getMessage();
+        }
+
+        return $this->renderProjectPage('project/health', [
+            'health' => $health,
+            'healthRows' => $healthRows,
+            'error' => $error,
         ]);
     }
 
@@ -85,12 +111,44 @@ class Project extends Controller
         }
     }
 
-    private function renderProjectPage(array $data): string
+    private function renderProjectPage(string $view, array $data): string
     {
         helper(['form', 'url']);
 
         return view('layout/header')
-            . view('project/index', $data)
+            . view($view, $data)
             . view('layout/footer');
+    }
+
+    private function flattenTableRows(array $data, string $prefix = ''): array
+    {
+        $rows = [];
+        foreach ($data as $key => $value) {
+            $label = $prefix === '' ? (string) $key : $prefix . '.' . $key;
+
+            if (is_array($value)) {
+                $rows = array_merge($rows, $this->flattenTableRows($value, $label));
+                continue;
+            }
+
+            $rows[] = [
+                'label' => $label,
+                'value' => $this->formatHealthValue($value),
+            ];
+        }
+
+        return $rows;
+    }
+
+    private function formatHealthValue(mixed $value): string
+    {
+        if (is_bool($value)) {
+            return $value ? 'true' : 'false';
+        }
+        if ($value === null) {
+            return 'null';
+        }
+
+        return (string) $value;
     }
 }

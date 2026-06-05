@@ -26,6 +26,12 @@ The VM mode uses:
 - SQLite history database at `Server/CodeIgniterApp/writable/prediction_history.sqlite`
 - URL: `http://localhost:17888/2026Project/`
 
+Pages:
+
+- `GET /2026Project`: prediction form and result page
+- `GET /2026Project/history`: SQL history table
+- `GET /2026Project/health`: health metadata table
+
 ## Local Flask Mode
 
 The Flask mode is only a local development shortcut. It is useful on this Windows machine because PHP/Composer are not installed locally.
@@ -50,6 +56,8 @@ http://localhost:17888/2026Project/
 ```
 
 ## API
+
+The API routes stay separate from the HTML pages:
 
 ```powershell
 Invoke-RestMethod -Method Post -Uri http://localhost:17888/2026Project/api/predict `

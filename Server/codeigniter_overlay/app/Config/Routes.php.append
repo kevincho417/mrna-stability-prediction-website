@@ -1,5 +1,9 @@
 $routes->get('2026Project', 'Project::index');
 $routes->get('2026Project/', 'Project::index');
 $routes->post('2026Project/predict', 'Project::predict');
+$routes->get('2026Project/history', 'Project::history');
+$routes->get('2026Project/history/', 'Project::history');
+$routes->get('2026Project/health', 'Project::healthPage');
+$routes->get('2026Project/health/', 'Project::healthPage');
 $routes->post('2026Project/api/predict', 'Project::apiPredict');
 $routes->get('2026Project/api/health', 'Project::health');

@@ -10,6 +10,12 @@ This is the formal server workflow for `Project.pdf`.
 - Deep learning socket service: Python TCP server on `127.0.0.1:16888`
 - SQL history storage: SQLite database under CodeIgniter `writable/`
 
+HTML pages:
+
+- `http://localhost:17888/2026Project`
+- `http://localhost:17888/2026Project/history`
+- `http://localhost:17888/2026Project/health`
+
 ## Architecture
 
 ```text

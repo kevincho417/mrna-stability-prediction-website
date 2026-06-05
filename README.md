@@ -150,6 +150,12 @@ The formal project server follows `Project.pdf`:
 - Python prediction socket on `127.0.0.1:16888`
 - URL: `http://localhost:17888/2026Project/`
 
+CodeIgniter pages:
+
+- `/2026Project`: prediction form and prediction result
+- `/2026Project/history`: SQL prediction history table
+- `/2026Project/health`: server, socket, and model health table
+
 Inside the Ubuntu VM:
 
 ```bash

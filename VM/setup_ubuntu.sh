@@ -58,16 +58,20 @@ cp "${OVERLAY_DIR}/app/Models/PredictionModel.php" "${CODEIGNITER_DIR}/app/Model
 cp "${OVERLAY_DIR}/app/Views/layout/header.php" "${CODEIGNITER_DIR}/app/Views/layout/header.php"
 cp "${OVERLAY_DIR}/app/Views/layout/footer.php" "${CODEIGNITER_DIR}/app/Views/layout/footer.php"
 cp "${OVERLAY_DIR}/app/Views/project/index.php" "${CODEIGNITER_DIR}/app/Views/project/index.php"
+cp "${OVERLAY_DIR}/app/Views/project/history.php" "${CODEIGNITER_DIR}/app/Views/project/history.php"
+cp "${OVERLAY_DIR}/app/Views/project/health.php" "${CODEIGNITER_DIR}/app/Views/project/health.php"
 cp "${PROJECT_ROOT}/Server/static/styles.css" "${CODEIGNITER_DIR}/public/assets/styles.css"
 
 ROUTES_FILE="${CODEIGNITER_DIR}/app/Config/Routes.php"
-if ! grep -q "Project::index" "${ROUTES_FILE}"; then
-  {
-    echo ""
-    echo "// 2026 DL Big Data project routes"
-    cat "${OVERLAY_DIR}/app/Config/Routes.php.append"
-  } >> "${ROUTES_FILE}"
+if ! grep -q "2026 DL Big Data project routes" "${ROUTES_FILE}"; then
+  echo "" >> "${ROUTES_FILE}"
+  echo "// 2026 DL Big Data project routes" >> "${ROUTES_FILE}"
 fi
+while IFS= read -r route_line; do
+  if [ -n "${route_line}" ] && ! grep -Fq "${route_line}" "${ROUTES_FILE}"; then
+    echo "${route_line}" >> "${ROUTES_FILE}"
+  fi
+done < "${OVERLAY_DIR}/app/Config/Routes.php.append"
 
 echo "[5/6] Setting CodeIgniter base URL and environment"
 ENV_FILE="${CODEIGNITER_DIR}/.env"

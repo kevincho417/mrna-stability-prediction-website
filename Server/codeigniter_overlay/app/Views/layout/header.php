@@ -15,8 +15,8 @@
             </div>
             <nav class="flex gap-2 max-md:mt-4" aria-label="Server links">
                 <a class="rounded-md border border-mist-200 px-3 py-2 text-sm font-bold text-cyan-800 hover:bg-mist-50" href="<?= site_url('2026Project') ?>">Predict</a>
-                <a class="rounded-md border border-mist-200 px-3 py-2 text-sm font-bold text-cyan-800 hover:bg-mist-50" href="<?= site_url('2026Project') ?>#history">History</a>
-                <a class="rounded-md border border-mist-200 px-3 py-2 text-sm font-bold text-cyan-800 hover:bg-mist-50" href="<?= site_url('2026Project/api/health') ?>">Health</a>
+                <a class="rounded-md border border-mist-200 px-3 py-2 text-sm font-bold text-cyan-800 hover:bg-mist-50" href="<?= site_url('2026Project/history') ?>">History</a>
+                <a class="rounded-md border border-mist-200 px-3 py-2 text-sm font-bold text-cyan-800 hover:bg-mist-50" href="<?= site_url('2026Project/health') ?>">Health</a>
             </nav>
         </div>
     </header>
