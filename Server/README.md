@@ -41,7 +41,7 @@ It follows the same project deployment shape from `Project.pdf`:
 - HTTP site: `http://localhost:17888/2026Project/`
 - Prediction socket: `127.0.0.1:16888`
 - Page structure: header, main body, footer
-- Model: MLP feature model + ConvTransformer ensemble
+- Model: codon-aware multi-branch CNN, served as a 5-fold ensemble
 
 ## Run Local Flask Mode
 

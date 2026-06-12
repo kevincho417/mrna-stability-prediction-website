@@ -9,7 +9,7 @@ from typing import Any
 
 from flask import Flask, jsonify, render_template, request
 
-from inference import DEFAULT_ENSEMBLE_SUMMARY, DEFAULT_MLP_DIR, DEFAULT_TRANSFORMER_DIR, PredictionService
+from inference import DEFAULT_MODEL_DIR, PredictionService
 from socket_protocol import send_json_request
 
 
@@ -22,9 +22,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--http-port", type=int, default=17888)
     parser.add_argument("--socket-host", default="127.0.0.1")
     parser.add_argument("--socket-port", type=int, default=16888)
-    parser.add_argument("--mlp-dir", type=Path, default=DEFAULT_MLP_DIR)
-    parser.add_argument("--transformer-dir", type=Path, default=DEFAULT_TRANSFORMER_DIR)
-    parser.add_argument("--ensemble-summary", type=Path, default=DEFAULT_ENSEMBLE_SUMMARY)
+    parser.add_argument("--model-dir", type=Path, default=DEFAULT_MODEL_DIR)
     parser.add_argument("--debug", action="store_true")
     return parser.parse_args()
 
@@ -128,7 +126,7 @@ def create_app(socket_host: str, socket_port: int) -> Flask:
 
 def main() -> None:
     args = parse_args()
-    service = PredictionService(args.mlp_dir, args.transformer_dir, args.ensemble_summary)
+    service = PredictionService(args.model_dir)
     socket_server = PredictionSocketServer(args.socket_host, args.socket_port, service)
     socket_thread = threading.Thread(target=socket_server.serve_forever, daemon=True)
     socket_thread.start()

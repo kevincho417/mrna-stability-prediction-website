@@ -5,7 +5,7 @@
         <span>Socket port 16888</span>
         <span>Framework: CodeIgniter 4 + PHP</span>
         <span>SQL: SQLite history</span>
-        <span>Model: MLP + ConvTransformer ensemble</span>
+        <span>Model: codon-aware multi-branch CNN (5-fold ensemble)</span>
     </footer>
 </body>
 </html>

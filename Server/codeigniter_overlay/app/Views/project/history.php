@@ -24,8 +24,8 @@ $history = $history ?? [];
                         <th class="py-2 pr-4 font-bold">Transcript ID</th>
                         <th class="py-2 pr-4 font-bold">Label</th>
                         <th class="py-2 pr-4 text-right font-bold">Ensemble</th>
-                        <th class="py-2 pr-4 text-right font-bold">MLP</th>
-                        <th class="py-2 pr-4 text-right font-bold">Transformer</th>
+                        <th class="py-2 pr-4 text-right font-bold">Min fold</th>
+                        <th class="py-2 pr-4 text-right font-bold">Max fold</th>
                         <th class="py-2 pr-4 text-right font-bold">Threshold</th>
                         <th class="py-2 text-right font-bold">Length</th>
                     </tr>

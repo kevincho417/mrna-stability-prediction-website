@@ -7,16 +7,14 @@ import threading
 from pathlib import Path
 from typing import Any
 
-from inference import DEFAULT_ENSEMBLE_SUMMARY, DEFAULT_MLP_DIR, DEFAULT_TRANSFORMER_DIR, PredictionService
+from inference import DEFAULT_MODEL_DIR, PredictionService
 
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Run the mRNA stability prediction socket server.")
     parser.add_argument("--host", default="127.0.0.1")
     parser.add_argument("--port", type=int, default=16888)
-    parser.add_argument("--mlp-dir", type=Path, default=DEFAULT_MLP_DIR)
-    parser.add_argument("--transformer-dir", type=Path, default=DEFAULT_TRANSFORMER_DIR)
-    parser.add_argument("--ensemble-summary", type=Path, default=DEFAULT_ENSEMBLE_SUMMARY)
+    parser.add_argument("--model-dir", type=Path, default=DEFAULT_MODEL_DIR)
     return parser.parse_args()
 
 
@@ -69,7 +67,7 @@ class PredictionSocketServer:
 
 def main() -> None:
     args = parse_args()
-    service = PredictionService(args.mlp_dir, args.transformer_dir, args.ensemble_summary)
+    service = PredictionService(args.model_dir)
     PredictionSocketServer(args.host, args.port, service).serve_forever()
 
 

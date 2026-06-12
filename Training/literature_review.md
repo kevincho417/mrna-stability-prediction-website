@@ -9,7 +9,7 @@
 | Deep learning on 3'UTR dynamics | Benegas et al., 2022, *Bioinformatics* / DeepUTR | UTR-seq 90,000 個 110 nt 3'UTR sequences，預測 8 個後續時間點 mRNA levels / degradation dynamics | raw 3'UTR sequence + initial mRNA level | CNN / RNN / multi-task models，Integrated Gradients 解釋 | DNN 優於傳統 linear degradation rate methods；CNN 較易解釋，RNN 可捕捉 positional effect | end-to-end sequence model 可學 motif 與位置效果；但資料量需足夠 |
 | Full-length sequence DL | Agarwal & Kelley et al., 2022, *Genome Biology* / Saluki | human/mouse endogenous mRNA half-life | full mRNA sequence up to 12,288 nt + coding frame + splice-site annotation | hybrid 1D CNN + GRU；multi-species heads | human half-life Pearson r 約 0.77，mouse 約 0.73；可預測 variant effect | full-length mRNA 有用；CNN+RNN/attention 需處理 variable length 與長序列 |
 | Crowdsourced RNA degradation DL | Wayment-Steele et al., 2022, *Nature Machine Intelligence* / OpenVaccine | 6,043 個 102-130 nt RNA constructs，單核苷酸解析度 degradation / SHAPE labels | sequence + predicted structure / loop features | Kaggle ensemble，常見 GRU/LSTM/CNN/GNN 等 | winning model 約 41% nucleotide-level predictions within experimental error；可泛化到 504-1,588 nt mRNA | ensemble 與 structure-aware features 很有幫助；短序列訓練可泛化但要小心 domain shift |
-| Conv + self-attention | He et al., 2023, *Briefings in Bioinformatics* / RNAdegformer | OpenVaccine nucleotide-level degradation + in vitro half-life | nucleotide embedding + biophysical features，例如 BPP / distance / structure | convolution + self-attention + supervised / unsupervised / semi-supervised learning | 優於 OpenVaccine top solution；對較長 mRNA half-life 有較好 correlation；attention map 可解釋 | 本專案 ConvTransformer 方向合理；Conv 可學 local motifs，attention 可學 global dependencies |
+| Conv + self-attention | He et al., 2023, *Briefings in Bioinformatics* / RNAdegformer | OpenVaccine nucleotide-level degradation + in vitro half-life | nucleotide embedding + biophysical features，例如 BPP / distance / structure | convolution + self-attention + supervised / unsupervised / semi-supervised learning | 優於 OpenVaccine top solution；對較長 mRNA half-life 有較好 correlation；attention map 可解釋 | 支持本專案以 Conv 為主幹的設計；Conv 可學 local motifs，attention pooling 可加權重要位置 |
 | Biophysical + ML | Cetnar et al., 2024, *Nature Communications* | >50,000 synthetic bacterial mRNAs，half-life 約 20 sec 到 20 min | sequence design variables + biophysical model outputs | biophysical modeling + ML kinetic decay model | 高準確度與 generalizability；量化 translation rate、secondary structure、G-quadruplex、RppH 等因素 | 若能加入 secondary structure / translation rate features，可能提升模型 |
 | RNA foundation model | Zhou et al., 2025, *Genome Biology* / LAMAR | RNA regulation tasks；3'UTR half-life prediction | pretrained Transformer representation | pretrain on ~15M mammalian/viral genome+transcriptome sequences，fine-tune downstream | LAMAR-DR 在 3'UTR half-life 預測達 MSE 0.176、Spearman 0.647，優於 RNA-FM/RNAErnie | 若資料小，pretrained RNA LM 可能比從零訓練 Transformer 更有效 |
 | Long RNA language model | Li et al., 2025, *Genome Biology* / HydraRNA | full-length RNA downstream tasks，含 mRNA half-life / translation | full-length RNA sequence | hybrid Hydra SSM + multi-head attention，masked language pretraining | half-life prediction Pearson R² 約 0.334；指出 CDS 對 half-life variance contribution 最大 | full-length modeling 應保留 CDS；長序列模型需要 linear-time / downsampling strategy |
@@ -17,10 +17,10 @@
 ## Summary for This Project
 
 1. k-mer feature / k-mer token 有文獻基礎，因為許多 mRNA stability 訊號來自短 motif，例如 ARE、PUM、miRNA target、poly-U/poly-A-like elements。
-2. Conv + Transformer 是合理架構：Conv 負責 local motif extraction，Transformer 捕捉長距離 dependency。
-3. 小資料集下，從零訓練 Transformer 不一定勝過 feature-based MLP。文獻中表現最好的 end-to-end / foundation model 通常依賴大量 MPRA 資料或大規模 pretraining。
-4. Ensemble 是實用方向。OpenVaccine 類型任務中，ensemble 常能提升泛化；本專案中 MLP + Transformer ensemble 的 CV auROC 也從 0.7936 提升到約 0.804。
-5. 若要再提升，可加入 RNA secondary structure / base-pairing probability / minimum free energy / codon optimality features，或使用 pretrained RNA language model。
+2. Conv 適合擷取 local motif：本專案最終模型對 5'UTR / 3'UTR / CDS 各用一支 dilated Conv1d branch，搭配 masked max + mean + attention pooling，處理 variable-length 與偶爾空白的 UTR。
+3. CDS 以 **codon-level token**（非重疊三聯體、64-codon vocab）建模，直接暴露 codon optimality 這個 mRNA stability 的主要決定因子，是 nucleotide-level model 難以捕捉的訊號。
+4. 小資料集（約 3k 筆）下，輕量模型（約 220K 參數）配合工程特徵比從零訓練大型 Transformer 更穩。最終 codon-aware multi-branch CNN 以 5-fold ensemble 取得 CV auROC 約 0.803。
+5. 若要再提升，可加入 RNA secondary structure / base-pairing probability / minimum free energy features，或改用 pretrained RNA language model（RNA-FM、UTR-LM、CodonBERT 等）的 embedding。
 
 ## References
 

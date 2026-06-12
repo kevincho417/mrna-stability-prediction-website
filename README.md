@@ -15,45 +15,51 @@ Labels:
 
 ## Final Model
 
-The final model is an ensemble of two models:
+The final model is a **codon-aware multi-branch CNN** (PyTorch), trained with
+5-fold cross-validation and served as a 5-model ensemble (mean probability).
 
-| Component | Description |
-|---|---|
-| Feature MLP | Uses RNA length, base composition, GC ratio, motif frequency, and 1-mer to 4-mer frequency features |
-| ConvTransformer | End-to-end AUCG token sequence model with 1D convolutional downsampling and Transformer Encoder layers |
+| Branch | Input | Description |
+|---|---|---|
+| 5'UTR / 3'UTR | nucleotide tokens (`A C G U N`) | dilated Conv1d tower + masked max/mean/attention pooling |
+| CDS | codon tokens (64-codon vocab) | codon-level Conv1d tower capturing codon optimality |
+| Engineered features | 75-dim vector | log-lengths, per-region GC, AU-rich-element & uAUG counts, 5'-CDS GC ramp, length ratios, 64-dim codon frequency |
 
-Final ensemble:
+The three pooled branch vectors and the engineered features are concatenated and
+passed to a 2-layer MLP head. The model is lightweight (~220K params) to limit
+overfitting on the ~3k-sample dataset. Loss is `BCEWithLogitsLoss` with
+`pos_weight`; model selection and early stopping monitor validation auROC.
 
 ```text
-prediction = 0.67 * MLP_probability + 0.33 * ConvTransformer_probability
-threshold = 0.5
+prediction = mean(fold_1 .. fold_5 sigmoid probabilities)
+threshold  = 0.366   # validation-tuned (cv_metrics.json global_threshold)
 ```
 
 ## 5-fold CV Results
 
-| Model | Recall | Precision | Specificity | F1 | auROC | auPRC |
+| Metric | Recall | Precision | Specificity | F1 | auROC | auPRC |
 |---|---:|---:|---:|---:|---:|---:|
-| Feature MLP | 0.7120 | 0.7144 | 0.7342 | 0.7122 | 0.7936 | 0.7804 |
-| ConvTransformer 8192 | 0.5960 | 0.7583 | 0.8058 | 0.6560 | 0.7927 | 0.7657 |
-| Final ensemble | 0.6985 | 0.7389 | 0.7658 | 0.7162 | 0.8041 | 0.7877 |
+| 5-fold CV mean | 0.8264 | 0.6858 | 0.6377 | 0.7477 | **0.8032** | 0.7893 |
+| Pooled OOF | 0.8052 | 0.6846 | 0.6552 | 0.7400 | 0.7999 | 0.7821 |
 
-Detailed output files:
+Per-fold auROC: 0.814, 0.772, 0.782, 0.834, 0.815. Mean CV auROC **0.803**
+clears the 0.75 minimum. auROC / auPRC are threshold-free; the threshold above is
+used only for the threshold-dependent metrics. Detailed numbers:
 
-- `Training/outputs/report_summary.md`
-- `Training/transformer_outputs_8192/report_summary.md`
-- `Training/ensemble_outputs_base8192/report_summary.md`
+- `Training/outputs/cv_metrics.json`
+- `Training/outputs/learning_curves.png`
 
 ## Repository Structure
 
 ```text
 Training/
-  train.py                          feature MLP training
-  train_transformer.py              ConvTransformer training
-  ensemble_predictions.py           ensemble prediction builder
+  model.py                          codon-aware multi-branch CNN definition
+  data.py                           tokenization, feature engineering, fold loading
+  train.py                          5-fold CV training + 5-model test ensemble
+  predict.py                        stand-alone inference from checkpoints
+  gen_v2.py                         architecture diagram renderer
   literature_review.md              related work summary
-  outputs/                          final MLP outputs and checkpoints
-  transformer_outputs_8192/         final ConvTransformer outputs and checkpoints
-  ensemble_outputs_base8192/        final ensemble predictions and metrics
+  full_model_lite.png / .svg        architecture diagram
+  outputs/                          fold checkpoints, metrics, predictions, curves, feature stats
 Server/
   inference.py                      model loading and prediction wrapper
   prediction_socket_server.py       Python TCP socket inference server
@@ -109,22 +115,18 @@ pip install -r requirements.txt
 
 ## Train Models
 
-Feature MLP:
+5-fold CV training + test predictions (ensemble of the 5 fold models):
 
 ```bash
-python Training/train.py
+python Training/train.py --data_dir Dataset --out_dir Training/outputs --epochs 40 --batch_size 32
 ```
 
-ConvTransformer:
+Re-run inference later from the saved checkpoints:
 
 ```bash
-python Training/train_transformer.py --max-len 8192 --d-model 96 --conv-layers 3 --transformer-layers 2 --n-heads 4 --ff-dim 192 --epochs 30 --patience 6 --batch-size 16 --output-dir Training/transformer_outputs_8192
-```
-
-Ensemble:
-
-```bash
-python Training/ensemble_predictions.py --transformer-dir Training/transformer_outputs_8192 --output-dir Training/ensemble_outputs_base8192
+python Training/predict.py --ckpt_dir Training/outputs --data_dir Dataset \
+    --input Dataset/test/test_without_label.csv \
+    --output Training/outputs/test_predictions.csv
 ```
 
 ## Local Flask Demo

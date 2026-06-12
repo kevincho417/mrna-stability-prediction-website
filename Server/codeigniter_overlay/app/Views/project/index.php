@@ -63,11 +63,11 @@ $utr3 = esc($old['utr3'] ?? '');
                     <dd class="font-bold"><?= number_format((float) $result['predicted_probability'], 4) ?></dd>
                 </div>
                 <div class="flex justify-between gap-4 border-b border-mist-200 py-2.5">
-                    <dt class="text-zinc-500">MLP probability</dt>
+                    <dt class="text-zinc-500">Lowest fold probability</dt>
                     <dd class="font-bold"><?= number_format((float) $result['mlp_probability'], 4) ?></dd>
                 </div>
                 <div class="flex justify-between gap-4 border-b border-mist-200 py-2.5">
-                    <dt class="text-zinc-500">Transformer probability</dt>
+                    <dt class="text-zinc-500">Highest fold probability</dt>
                     <dd class="font-bold"><?= number_format((float) $result['transformer_probability'], 4) ?></dd>
                 </div>
                 <div class="flex justify-between gap-4 border-b border-mist-200 py-2.5">

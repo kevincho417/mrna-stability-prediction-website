@@ -52,11 +52,11 @@
           <dd class="font-bold">{{ "%.4f"|format(result.predicted_probability) }}</dd>
         </div>
         <div class="flex justify-between gap-4 border-b border-mist-200 py-2.5">
-          <dt class="text-zinc-500">MLP probability</dt>
+          <dt class="text-zinc-500">Lowest fold probability</dt>
           <dd class="font-bold">{{ "%.4f"|format(result.mlp_probability) }}</dd>
         </div>
         <div class="flex justify-between gap-4 border-b border-mist-200 py-2.5">
-          <dt class="text-zinc-500">Transformer probability</dt>
+          <dt class="text-zinc-500">Highest fold probability</dt>
           <dd class="font-bold">{{ "%.4f"|format(result.transformer_probability) }}</dd>
         </div>
         <div class="flex justify-between gap-4 border-b border-mist-200 py-2.5">
