@@ -1,94 +1,129 @@
-# mRNA Stability Model Training
+# mRNA Stability Prediction — Model Training
 
-This folder contains the training pipeline for the final project network training
-task. The model is a **codon-aware multi-branch CNN** (PyTorch) trained with
-5-fold cross-validation and served as a 5-model ensemble.
+Codon-Aware Multi-Branch CNN (`mRNAStabilityNet`) for binary mRNA stability classification.
 
-`Label 0 = highly degraded (unstable)`, `Label 1 = lowly degraded (stable)`.
-The graded metric is **auROC**.
+## Model Architecture
 
-## Run
+![Model Architecture](figures/keras_multibranch_cnn.png)
 
-5-fold CV training + test predictions (ensemble of the 5 fold models):
+The model has **four parallel branches** that are concatenated and fed into a classification head:
 
-```powershell
-python .\Training\train.py --data_dir .\Dataset --out_dir .\Training\outputs --epochs 40 --batch_size 32
+| Branch | Input | Encoding | Conv Kernel | Output |
+|--------|-------|----------|-------------|--------|
+| **5'UTR** | Nucleotide sequence (max 512 nt) | Embedding(6, 16) | k=7, dilation 1/2/4 | 192d |
+| **CDS** | Codon sequence (max 700 codons) | Embedding(66, 16) | k=5, dilation 1/2/4 | 192d |
+| **3'UTR** | Nucleotide sequence (max 1024 nt) | Embedding(6, 16) | k=7, dilation 1/2/4 | 192d |
+| **Features** | 75-dim engineered features | StandardScaler | — | 75d |
+
+Each conv branch uses **3 dilated Conv1D blocks** (with ChannelLayerNorm + ReLU + Dropout)
+followed by **triple pooling** (masked max + mean + attention) to produce a 192-d vector.
+
+**Classification head:** Linear(651→128) → LayerNorm → ReLU → Dropout → Linear(128→64) → LayerNorm → ReLU → Dropout → Linear(64→1)
+
+**Total trainable parameters:** 221,508
+
+### Engineered Features (75-dim)
+
+- **11 scalar features:** log-transformed region lengths, GC content (per region), AU-rich element count (AUUUA in 3'UTR), upstream AUG count (5'UTR), 5' CDS ramp GC, UTR-to-CDS length ratios
+- **64-dim codon frequency:** CDS codon usage distribution over all 64 codons
+
+## Training
+
+5-fold cross-validation with one model per fold, ensembled via probability averaging.
+
+```bash
+python train_multibranch_cnn.py
 ```
 
-Stand-alone inference later from the saved checkpoints:
+### Training Configuration
 
-```powershell
-python .\Training\predict.py --ckpt_dir .\Training\outputs --data_dir .\Dataset `
-    --input .\Dataset\test\test_without_label.csv `
-    --output .\Training\outputs\test_predictions.csv
+| Parameter | Value |
+|-----------|-------|
+| Optimizer | AdamW (lr=1e-3, weight_decay=1e-4) |
+| Scheduler | CosineAnnealingLR |
+| Loss | BCEWithLogitsLoss (class-weighted) |
+| Batch size | 32 |
+| Max epochs | 40 |
+| Early stopping | patience=10, monitored by val auROC |
+| Gradient clipping | max_norm=5.0 |
+| Dropout | 0.3 |
+| Seed | 42 |
+
+### Learning Curves
+
+![Learning Curves](figures/learning_curves.png)
+
+All 5 folds converge stably with early stopping triggered between epochs 15–21.
+
+## Results
+
+### 5-Fold Cross-Validation (mean ± std)
+
+| Metric | Score |
+|--------|-------|
+| **auROC** | **0.8041 ± 0.0207** |
+| **auPRC** | **0.7900 ± 0.0176** |
+| Recall | 0.8052 ± 0.0387 |
+| Precision | 0.6937 ± 0.0214 |
+| Specificity | 0.6679 ± 0.0368 |
+| F1 | 0.7445 ± 0.0193 |
+| Accuracy | 0.7339 ± 0.0185 |
+
+### Per-Fold auROC
+
+| Fold 1 | Fold 2 | Fold 3 | Fold 4 | Fold 5 |
+|--------|--------|--------|--------|--------|
+| 0.8115 | 0.7763 | 0.7846 | 0.8320 | 0.8163 |
+
+**Grading check:** CV auROC 0.8041 ≥ 0.75 minimum threshold ✓
+
+### OOF Overall
+
+| Metric | Score |
+|--------|-------|
+| auROC | 0.7970 |
+| auPRC | 0.7815 |
+| F1 | 0.7317 |
+| Threshold | 0.329 |
+
+## Key Design Decisions
+
+1. **Codon-level CDS encoding:** The CDS branch tokenizes at the codon level (66 tokens) instead of single nucleotides, directly capturing codon usage bias — a primary determinant of mRNA stability.
+2. **Dilated convolutions:** Dilation rates of 1→2→4 expand the receptive field without increasing parameter count, allowing the model to capture long-range sequence patterns.
+3. **ChannelLayerNorm:** Normalizes over channels rather than batch statistics, avoiding distortion from padded positions — critical when sequences vary greatly in length.
+4. **Triple pooling:** Combining max, mean, and attention pooling retains complementary information from the sequence representation.
+5. **Lightweight design:** ~221K parameters to reduce overfitting on the ~3,000-sample dataset.
+
+## File Structure
+
+```
+Training/
+├── multibranch_cnn_model.py      # Model + dataset + feature engineering
+├── train_multibranch_cnn.py      # 5-fold CV training script
+├── keras_multibranch_cnn.py      # Keras equivalent (for architecture diagram)
+├── figures/
+│   ├── keras_multibranch_cnn.png # Architecture diagram (plot_model)
+│   ├── keras_multibranch_cnn.svg
+│   ├── keras_multibranch_cnn.pdf
+│   ├── learning_curves.png       # 5-fold CV learning curves
+│   ├── multibranch_cnn_summary.png
+│   └── multibranch_cnn_summary.txt
+└── outputs_multibranch_cnn/
+    ├── fold{1-5}_best.pt         # Trained checkpoints
+    ├── cv_metrics.json           # Full metric suite
+    ├── oof_predictions.csv       # Out-of-fold predictions
+    ├── test_predictions.csv      # Ensembled test predictions
+    └── learning_curves.png       # Learning curve plot
 ```
 
-The script uses the five files in `Dataset/training` as predefined CV folds: for
-each held-out fold it trains on the other four and validates on that fold. The
-five fold models are ensembled (mean probability) for the test prediction. It
-writes the following to `Training/outputs`:
+## Inference
 
-- `fold{k}_best.pt`: best checkpoint per fold (selected by validation auROC).
-- `cv_metrics.json`: full metric suite per fold + mean/std + pooled OOF + the
-  validation-tuned `global_threshold`.
-- `learning_curves.csv` / `learning_curves.png`: the 5-fold CV learning curves.
-- `oof_predictions.csv`: out-of-fold predictions for every training row.
-- `test_predictions.csv`: `TranscriptID, prob, Label` for the test set (keep
-  `prob` for auROC scoring).
-- `feature_stats.json`: engineered-feature normalization (mean/std over the
-  training rows) so inference can normalize without re-reading the dataset.
+```python
+from multibranch_cnn_model import mRNAStabilityNet, mRNADataset, load_folds, load_test, DEFAULT_MAXLEN
+import torch, glob, numpy as np
 
-## Model
-
-A multi-branch network over the three transcript regions, concatenated with
-engineered features and passed to a 2-layer MLP head:
-
-- **5'UTR / 3'UTR**: nucleotide-level tokens (`A C G U N` + pad), embedded.
-- **CDS**: tokenized as **codons** (non-overlapping triplets, 64-codon vocab),
-  which exposes *codon optimality*, a dominant determinant of mRNA stability
-  that nucleotide-level models miss.
-- Each branch is a stacked dilated `Conv1d` tower (`ChannelLayerNorm` + ReLU +
-  Dropout) with masked global **max + mean + attention** pooling. Empty
-  5'UTR / 3'UTR pool to exactly 0; the region is still seen through the
-  engineered features. LayerNorm (not BatchNorm) keeps padded timesteps and
-  batch composition from distorting normalization.
-- Lightweight by design (embedding 16, channels 32/64/64, head 128, ~220K
-  params) to limit overfitting on the ~3k-sample dataset.
-- Pooled vectors are concatenated with **75 engineered features** (log-lengths,
-  GC per region, AU-rich-element & uAUG counts, 5'-CDS GC ramp, length ratios,
-  and a 64-dim codon-frequency vector) before the MLP head.
-- Loss: `BCEWithLogitsLoss` with `pos_weight`; AdamW + cosine LR; early stopping
-  and model selection on **validation auROC**.
-
-Truncation caps (in `data.py`): 5'UTR 512 nt, 3'UTR 1024 nt, CDS 700 codons
-(2100 nt). The architecture diagram is in `full_model_lite.png` / `.svg`.
-
-## 5-fold CV results
-
-| Metric | 5-fold CV mean ± std |
-|---|---|
-| auROC | **0.8032 ± 0.0230** |
-| auPRC | 0.7893 ± 0.0170 |
-| Recall | 0.8264 ± 0.0386 |
-| Precision | 0.6858 ± 0.0446 |
-| Specificity | 0.6377 ± 0.1017 |
-| F1 | 0.7477 ± 0.0233 |
-| Accuracy | 0.7297 ± 0.0396 |
-
-Per-fold auROC: 0.814, 0.772, 0.782, 0.834, 0.815. Mean CV auROC **0.803**
-clears the 0.75 minimum. The validation-tuned decision threshold (`global_threshold`
-≈ 0.366) is used only for the threshold-dependent metrics; auROC and auPRC are
-threshold-free. Full numbers are in `outputs/cv_metrics.json`.
-
-## Files
-
-| File | Purpose |
-|---|---|
-| `model.py` | network definition (`mRNAStabilityNet`) |
-| `data.py` | tokenization, feature engineering, dataset, fold loading |
-| `train.py` | 5-fold CV training + 5-model test ensemble |
-| `predict.py` | stand-alone inference from saved checkpoints |
-| `gen_v2.py` | renders the architecture diagram |
-| `requirements.txt` | dependencies |
-| `literature_review.md` | related-work summary |
-| `outputs/` | checkpoints, metrics, predictions, learning curves, feature stats |
+device = "cuda" if torch.cuda.is_available() else "cpu"
+# Load all fold checkpoints and average predictions
+ckpts = sorted(glob.glob("outputs_multibranch_cnn/fold*_best.pt"))
+# ... (see train_multibranch_cnn.py for full inference loop)
+```

@@ -1,0 +1,649 @@
+Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─Codon-Aware Multi-Branch CNN  —  mRNAStabilityNet  (~221K params)
+(replicated from kevincho417/mrna-stability-prediction-website)
+
+Input:  5'UTR [B,512] vocab=6  |  CDS [B,700] vocab=66  |  3'UTR [B,1024] vocab=6  |  Extra [B,75]
+Loss: BCEWithLogitsLoss  ·  Optim: AdamW  ·  Sched: CosineAnnealing
+─
+
+Model: "mRNAStabilityNet_MultiBranchCNN"
++------------------------------------------------------------------------------
+| Layer (type)                | Output Shape            |        Param # | Conn
+|-----------------------------+-------------------------+----------------+-----
+| utr5_token_ids (InputLayer) | (None, 512)             |              0 | -   
+|-----------------------------+-------------------------+----------------+-----
+| cds_token_ids (InputLayer)  | (None, 700)             |              0 | -   
+|-----------------------------+-------------------------+----------------+-----
+| utr3_token_ids (InputLayer) | (None, 1024)            |              0 | -   
+|-----------------------------+-------------------------+----------------+-----
+| utr5_embedding (Embedding)  | (None, 512, 16)         |             96 | utr5
+|-----------------------------+-------------------------+----------------+-----
+| cds_embedding (Embedding)   | (None, 700, 16)         |          1,056 | cds_
+|-----------------------------+-------------------------+----------------+-----
+| utr3_embedding (Embedding)  | (None, 1024, 16)        |             96 | utr3
+|-----------------------------+-------------------------+----------------+-----
+| utr5_conv1d_0 (Conv1D)      | (None, 512, 32)         |          3,616 | utr5
+|-----------------------------+-------------------------+----------------+-----
+| cds_conv1d_0 (Conv1D)       | (None, 700, 32)         |          2,592 | cds_
+|-----------------------------+-------------------------+----------------+-----
+| utr3_conv1d_0 (Conv1D)      | (None, 1024, 32)        |          3,616 | utr3
+|-----------------------------+-------------------------+----------------+-----
+| utr5_layernorm_0            | (None, 512, 32)         |             64 | utr5
+| (ChannelLayerNorm)          |                         |                |     
+|-----------------------------+-------------------------+----------------+-----
+| cds_layernorm_0             | (None, 700, 32)         |             64 | cds_
+| (ChannelLayerNorm)          |                         |                |     
+|-----------------------------+-------------------------+----------------+-----
+| utr3_layernorm_0            | (None, 1024, 32)        |             64 | utr3
+| (ChannelLayerNorm)          |                         |                |     
+|-----------------------------+-------------------------+----------------+-----
+| utr5_relu_0 (Activation)    | (None, 512, 32)         |              0 | utr5
+|-----------------------------+-------------------------+----------------+-----
+| cds_relu_0 (Activation)     | (None, 700, 32)         |              0 | cds_
+|-----------------------------+-------------------------+----------------+-----
+| utr3_relu_0 (Activation)    | (None, 1024, 32)        |              0 | utr3
+|-----------------------------+-------------------------+----------------+-----
+| utr5_dropout_0 (Dropout)    | (None, 512, 32)         |              0 | utr5
+|-----------------------------+-------------------------+----------------+-----
+| cds_dropout_0 (Dropout)     | (None, 700, 32)         |              0 | cds_
+|-----------------------------+-------------------------+----------------+-----
+| utr3_dropout_0 (Dropout)    | (None, 1024, 32)        |              0 | utr3
+|-----------------------------+-------------------------+----------------+-----
+| utr5_conv1d_1 (Conv1D)      | (None, 512, 64)         |         14,400 | utr5
+|-----------------------------+-------------------------+----------------+-----
+| cds_conv1d_1 (Conv1D)       | (None, 700, 64)         |         10,304 | cds_
+|-----------------------------+-------------------------+----------------+-----
+| utr3_conv1d_1 (Conv1D)      | (None, 1024, 64)        |         14,400 | utr3
+|-----------------------------+-------------------------+----------------+-----
+| utr5_layernorm_1            | (None, 512, 64)         |            128 | utr5
+| (ChannelLayerNorm)          |                         |                |     
+|-----------------------------+-------------------------+----------------+-----
+| cds_layernorm_1             | (None, 700, 64)         |            128 | cds_
+| (ChannelLayerNorm)          |                         |                |     
+|-----------------------------+-------------------------+----------------+-----
+| utr3_layernorm_1            | (None, 1024, 64)        |            128 | utr3
+| (ChannelLayerNorm)          |                         |                |     
+|-----------------------------+-------------------------+----------------+-----
+| utr5_relu_1 (Activation)    | (None, 512, 64)         |              0 | utr5
+|-----------------------------+-------------------------+----------------+-----
+| cds_relu_1 (Activation)     | (None, 700, 64)         |              0 | cds_
+|-----------------------------+-------------------------+----------------+-----
+| utr3_relu_1 (Activation)    | (None, 1024, 64)        |              0 | utr3
+|-----------------------------+-------------------------+----------------+-----
+| utr5_dropout_1 (Dropout)    | (None, 512, 64)         |              0 | utr5
+|-----------------------------+-------------------------+----------------+-----
+| cds_dropout_1 (Dropout)     | (None, 700, 64)         |              0 | cds_
+|-----------------------------+-------------------------+----------------+-----
+| utr3_dropout_1 (Dropout)    | (None, 1024, 64)        |              0 | utr3
+|-----------------------------+-------------------------+----------------+-----
+| utr5_conv1d_2 (Conv1D)      | (None, 512, 64)         |         28,736 | utr5
+|-----------------------------+-------------------------+----------------+-----
+| cds_conv1d_2 (Conv1D)       | (None, 700, 64)         |         20,544 | cds_
+|-----------------------------+-------------------------+----------------+-----
+| utr3_conv1d_2 (Conv1D)      | (None, 1024, 64)        |         28,736 | utr3
+|-----------------------------+-------------------------+----------------+-----
+| utr5_layernorm_2            | (None, 512, 64)         |            128 | utr5
+| (ChannelLayerNorm)          |                         |                |     
+|-----------------------------+-------------------------+----------------+-----
+| cds_layernorm_2             | (None, 700, 64)         |            128 | cds_
+| (ChannelLayerNorm)          |                         |                |     
+|-----------------------------+-------------------------+----------------+-----
+| utr3_layernorm_2            | (None, 1024, 64)        |            128 | utr3
+| (ChannelLayerNorm)          |                         |                |     
+|-----------------------------+-------------------------+----------------+-----
+| utr5_relu_2 (Activation)    | (None, 512, 64)         |              0 | utr5
+|-----------------------------+-------------------------+----------------+-----
+| cds_relu_2 (Activation)     | (None, 700, 64)         |              0 | cds_
+|-----------------------------+-------------------------+----------------+-----
+| utr3_relu_2 (Activation)    | (None, 1024, 64)        |              0 | utr3
+|-----------------------------+-------------------------+----------------+-----
+| utr5_dropout_2 (Dropout)    | (None, 512, 64)         |              0 | utr5
+|-----------------------------+-------------------------+----------------+-----
+| utr5_padding_mask           | (None, 512)             |              0 | utr5
+| (ComputeMask)               |                         |                |     
+|-----------------------------+-------------------------+----------------+-----
+| cds_dropout_2 (Dropout)     | (None, 700, 64)         |              0 | cds_
+|-----------------------------+-------------------------+----------------+-----
+| cds_padding_mask            | (None, 700)             |              0 | cds_
+| (ComputeMask)               |                         |                |     
+|-----------------------------+-------------------------+----------------+-----
+| utr3_dropout_2 (Dropout)    | (None, 1024, 64)        |              0 | utr3
+|-----------------------------+-------------------------+----------------+-----
+| utr3_padding_mask           | (None, 1024)            |              0 | utr3
+| (ComputeMask)               |                         |                |     
+|-----------------------------+-------------------------+----------------+-----
+| utr5_triple_pool            | (None, 192)             |             65 | utr5
+| (TriplePool)                |                         |                | utr5
+|-----------------------------+-------------------------+----------------+-----
+| cds_triple_pool             | (None, 192)             |             65 | cds_
+| (TriplePool)                |                         |                | cds_
+|-----------------------------+-------------------------+----------------+-----
+| utr3_triple_pool            | (None, 192)             |             65 | utr3
+| (TriplePool)                |                         |                | utr3
+|-----------------------------+-------------------------+----------------+-----
+| extra_features_75d          | (None, 75)              |              0 | -   
+| (InputLayer)                |                         |                |     
+|-----------------------------+-------------------------+----------------+-----
+| concatenate_all_branches    | (None, 651)             |              0 | utr5
+| (Concatenate)               |                         |                | cds_
+|                             |                         |                | utr3
+|                             |                         |                | extr
+|-----------------------------+-------------------------+----------------+-----
+| dense_1 (Dense)             | (None, 128)             |         83,456 | conc
+|-----------------------------+-------------------------+----------------+-----
+| head_layernorm_1            | (None, 128)             |            256 | dens
+| (LayerNormalization)        |                         |                |     
+|-----------------------------+-------------------------+----------------+-----
+| head_relu_1 (Activation)    | (None, 128)             |              0 | head
+|-----------------------------+-------------------------+----------------+-----
+| head_dropout_1 (Dropout)    | (None, 128)             |              0 | head
+|-----------------------------+-------------------------+----------------+-----
+| dense_2 (Dense)             | (None, 64)              |          8,256 | head
+|-----------------------------+-------------------------+----------------+-----
+| head_layernorm_2            | (None, 64)              |            128 | dens
+| (LayerNormalization)        |                         |                |     
+|-----------------------------+-------------------------+----------------+-----
+| head_relu_2 (Activation)    | (None, 64)              |              0 | head
+|-----------------------------+-------------------------+----------------+-----
+| head_dropout_2 (Dropout)    | (None, 64)              |              0 | head
+|-----------------------------+-------------------------+----------------+-----
+| dense_out (Dense)           | (None, 1)               |             65 | head
++------------------------------------------------------------------------------
+ Total params: 221,508 (865.27 KB)
+ Trainable params: 221,508 (865.27 KB)
+ Non-trainable params: 0 (0.00 B)
+
